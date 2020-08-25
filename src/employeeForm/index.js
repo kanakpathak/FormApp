@@ -111,7 +111,24 @@ const Form = () => {
   };
 
   const downloadData = () => {
-    alert("Data Downloaded");
+    let employeeData = Object.values(
+      JSON.parse(localStorage.getItem("employeeDetail"))
+    );
+    const fileName = "Employee_Data";
+
+    employeeData = JSON.stringify(employeeData, undefined, 2);
+
+    //Reference: https://stackoverflow.com/a/30800715/8665740
+    const dataStr =
+      "data:text/json;charset=utf-8," + encodeURIComponent(employeeData);
+
+    const downloadAnchorNode = document.createElement("a");
+
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", fileName + ".json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
   };
 
   return (
