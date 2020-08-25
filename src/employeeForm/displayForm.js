@@ -1,9 +1,3 @@
-/* eslint-disable no-restricted-globals */
-/* eslint-disable jsx-a11y/no-autofocus */
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/prop-types */
-
 import React from "react";
 import "../styles/employeeForm.css";
 
@@ -11,22 +5,22 @@ const Contact = ({ contact, onChangeHandler, index }) => {
   return (
     <div>
       <select
+        id={index}
         name="contactType"
-        value={contact.contactType}
-        onChange={() => onChangeHandler(event, index)}
+        onChange={() => onChangeHandler(event)}
       >
-        <option value="primary">Primary</option>
-        <option value="home">Home</option>
-        <option value="emergency">Office</option>
-        <option value="other">Other</option>
+        <option value="Primary">Primary</option>
+        <option value="Home">Home</option>
+        <option value="Emergency">Emergency</option>
+        <option value="Other">Other</option>
       </select>
       <input
         type="text"
         name="contactNumber"
+        id={index}
         value={contact.contactNumber}
-        onChange={() => onChangeHandler(event, index)}
+        onChange={() => onChangeHandler(event)}
       />
-      {console.log("contact.contactNumber", contact.contactNumber)}
     </div>
   );
 };
@@ -37,8 +31,9 @@ const Skills = ({ skill, onChangeHandler, index }) => {
       <input
         type="text"
         name="skills"
+        id={index}
         value={skill}
-        onChange={() => onChangeHandler(event, index)}
+        onChange={() => onChangeHandler(event)}
       />
     </div>
   );
@@ -79,7 +74,6 @@ const DisplayForm = ({ empdetail, onChangeHandler, addContact, addSkill }) => {
             {empdetail.contact.map((contact, index) => {
               return (
                 <div key={index}>
-                  {console.log("renderung")}
                   <Contact
                     contact={contact}
                     onChangeHandler={onChangeHandler}

@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "webpack-dev-server --open --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "clean": "gh-pages-clean"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/kanakpathak/ReactBoilerPlate/issues"
   },
-  "homepage": "https://github.com/kanakpathak/ReactBoilerPlate#readme",
+  "homepage": "https://kanakpathak.github.io/FormAPP",
   "dependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -46,6 +49,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
+    "gh-pages": "^3.1.0",
     "prettier": "^2.0.2"
   }
 }

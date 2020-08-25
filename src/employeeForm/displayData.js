@@ -3,39 +3,57 @@ import "../styles/employeeForm.css";
 
 const DisplayData = () => {
   let data = localStorage.getItem("employeeDetail");
-  console.log("data", data);
   if (!data.length) return null;
   data = JSON.parse(data);
   return (
     <div className="formData">
       {Object.keys(data).map((empid, index) => {
         return (
-          <div key={empid}>
-            <div>Employee #{empid}</div>
-            <div>Name: {data[empid].name}</div>
-            <div>Designation: {data[empid].designation}</div>
+          <div
+            key={empid}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              lineHeight: "0px",
+              margin: "25px",
+              justifyContent: "space-evenly"
+            }}
+          >
             <div>
-              <div>Contact:</div>
+              <p>
+                <strong>Employee #{empid}</strong>
+              </p>
+            </div>
+            <div>
+              <p>Name: {data[empid].name}</p>
+            </div>
+            <div>
+              <p>Designation: {data[empid].designation}</p>
+            </div>
+            <div style={{ display: "flex" }}>
+              <p>Contact: </p>
               {data[empid].contact.map((info, index) => {
                 return (
-                  <div key={index}>
-                    <p>{info.contactType.toLowerCase()}</p>
-                    <p>-</p>
-                    <p>{info.contactNumber}</p>
-                  </div>
+                  <p key={index}>
+                    {"  "}
+                    {info.contactType.toLowerCase()}-{info.contactNumber}
+                    {"  "}
+                  </p>
                 );
               })}
             </div>
-            <div>
-              <div>Skills:</div>
+            <div style={{ display: "flex" }}>
+              <p>Skills: </p>
               {data[empid].skills.map((skill, index) => {
                 return index === data[empid].skills.length - 1 ? (
-                  <div>{skill}</div>
+                  <p>{skill} </p>
                 ) : (
-                  <div>{skill}, </div>
+                  <p>{skill}, </p>
                 );
               })}
             </div>
+            <br />
+            <br />
           </div>
         );
       })}

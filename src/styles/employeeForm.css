@@ -55,12 +55,16 @@
   background-color: whitesmoke;
 }
 
-
-.formData{
+.formData {
   background-color: whitesmoke;
   width: 80vh;
-  position: relative;
   margin: 16px;
   border: solid 1px black;
   padding: 20px;
+}
+
+.displayContact {
+  display: flex;
+  padding: 0px;
+  line-height: 1px;
 }
