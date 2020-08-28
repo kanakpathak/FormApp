@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/employeeForm.css";
+import "../../../styles/employeeForm.css";
 
 const Contact = ({ contact, onChangeHandler, index }) => {
   return (
@@ -83,9 +83,12 @@ const DisplayForm = ({ empdetail, onChangeHandler, addContact, addSkill }) => {
               );
             })}
           </div>
-          <button className="formButton" onClick={addContact}>
-            +
-          </button>
+          <input
+            type="button"
+            className="formButton"
+            onClick={addContact}
+            value="+"
+          />
         </div>
       </div>
       <div className="formGroup">
@@ -104,9 +107,12 @@ const DisplayForm = ({ empdetail, onChangeHandler, addContact, addSkill }) => {
               );
             })}
           </div>
-          <button className="formButton" onClick={addSkill}>
-            +
-          </button>
+          <input
+            type="button"
+            className="formButton"
+            onClick={addSkill}
+            value="+"
+          />
         </div>
       </div>
       <div className="formGroup">

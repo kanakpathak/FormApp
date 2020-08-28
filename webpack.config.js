@@ -29,14 +29,13 @@ module.exports = {
     hot: true
   },
   output: {
-    // filename: '[name].[contenthash:8].js',
     path: path.resolve(__dirname, "./dist"),
     filename: "main.js"
   },
 
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./src/static/index.html",
       filename: "./index.html"
     })
   ]

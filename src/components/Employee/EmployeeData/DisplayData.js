@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/employeeForm.css";
+import "../../../styles/employeeForm.css";
 
 const DisplayData = () => {
   let data = localStorage.getItem("employeeDetail");
@@ -25,10 +25,10 @@ const DisplayData = () => {
               </p>
             </div>
             <div>
-              <p>Name : {data[empid].name}</p>
+              <p>Name: {data[empid].name}</p>
             </div>
             <div>
-              <p>Designation : {data[empid].designation}</p>
+              <p>Designation: {data[empid].designation}</p>
             </div>
             <div style={{ display: "flex" }}>
               <p>Contact : </p>
@@ -36,8 +36,7 @@ const DisplayData = () => {
                 return info.contactNumber !== "" ? (
                   <p key={index} style={{ paddingLeft: "10px" }}>
                     {info.contactType[0].toUpperCase()}
-                    {info.contactType.slice(1).toLowerCase()}
-                    {"-"}
+                    {info.contactType.slice(1).toLowerCase()}-
                     {info.contactNumber}
                   </p>
                 ) : (
@@ -46,7 +45,7 @@ const DisplayData = () => {
               })}
             </div>
             <div style={{ display: "flex" }}>
-              <p>Skills : </p>
+              <p>Skills: </p>
               {data[empid].skills.map((skill, index) => {
                 return skill !== "" ? (
                   <p key={index} style={{ paddingLeft: "10px" }}>
@@ -59,7 +58,7 @@ const DisplayData = () => {
               })}
             </div>
             <div>
-              <p>Date of Birth : {data[empid].dob}</p>
+              <p>Date of Birth: {data[empid].dob}</p>
             </div>
             <br />
             <br />
