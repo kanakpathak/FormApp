@@ -1,13 +1,10 @@
 import React from "react";
-import "../../../styles/employeeForm.css";
+import employeeDetail from "../../../constants";
 
 const DisplayData = () => {
-  let data = localStorage.getItem("employeeDetail");
-  if (!data.length) return null;
-  data = JSON.parse(data);
   return (
     <div className="formData">
-      {Object.keys(data).map(empid => {
+      {Object.keys(employeeDetail).map(empid => {
         return (
           <div
             key={empid}
@@ -25,14 +22,14 @@ const DisplayData = () => {
               </p>
             </div>
             <div>
-              <p>Name: {data[empid].name}</p>
+              <p>Name: {employeeDetail[empid].name}</p>
             </div>
             <div>
-              <p>Designation: {data[empid].designation}</p>
+              <p>Designation: {employeeDetail[empid].designation}</p>
             </div>
             <div style={{ display: "flex" }}>
               <p>Contact : </p>
-              {data[empid].contact.map((info, index) => {
+              {employeeDetail[empid].contact.map((info, index) => {
                 return info.contactNumber !== "" ? (
                   <p key={index} style={{ paddingLeft: "10px" }}>
                     {info.contactType[0].toUpperCase()}
@@ -46,11 +43,13 @@ const DisplayData = () => {
             </div>
             <div style={{ display: "flex" }}>
               <p>Skills: </p>
-              {data[empid].skills.map((skill, index) => {
+              {employeeDetail[empid].skills.map((skill, index) => {
                 return skill !== "" ? (
                   <p key={index} style={{ paddingLeft: "10px" }}>
                     {skill}
-                    {index === data[empid].skills.length - 1 ? "" : ", "}
+                    {index === employeeDetail[empid].skills.length - 1
+                      ? ""
+                      : ", "}
                   </p>
                 ) : (
                   ""
@@ -58,7 +57,7 @@ const DisplayData = () => {
               })}
             </div>
             <div>
-              <p>Date of Birth: {data[empid].dob}</p>
+              <p>Date of Birth: {employeeDetail[empid].dob}</p>
             </div>
             <br />
             <br />

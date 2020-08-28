@@ -1,5 +1,4 @@
 import React from "react";
-import "../../../styles/employeeForm.css";
 
 const Contact = ({ contact, onChangeHandler, index }) => {
   return (
@@ -39,7 +38,7 @@ const Skills = ({ skill, onChangeHandler, index }) => {
   );
 };
 
-const DisplayForm = ({ empdetail, onChangeHandler, addContact, addSkill }) => {
+const Form = ({ empdetail, onChangeHandler, addContact, addSkill }) => {
   return (
     <div className="employeeForm">
       <div className="formGroup">
@@ -131,4 +130,4 @@ const DisplayForm = ({ empdetail, onChangeHandler, addContact, addSkill }) => {
   );
 };
 
-export default DisplayForm;
+export default Form;

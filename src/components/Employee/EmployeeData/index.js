@@ -1,13 +1,11 @@
 import React from "react";
 import DisplayData from "./DisplayData";
-import "../../../styles/employeeForm.css";
-import employeeData from "../../../constants";
 
-const ViewData = () => {
+const EmployeeData = () => {
   const downloadData = () => {
     const fileName = "Employee_Data";
-
-    const data = JSON.stringify(Object.values(employeeData), undefined, 2);
+    const employeeDetail = JSON.parse(localStorage.getItem("employeeDetail"));
+    const data = JSON.stringify(Object.values(employeeDetail), undefined, 2);
     // Reference: https://stackoverflow.com/a/30800715/8665740
     const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(data)}`;
 
@@ -30,4 +28,4 @@ const ViewData = () => {
   );
 };
 
-export default ViewData;
+export default EmployeeData;

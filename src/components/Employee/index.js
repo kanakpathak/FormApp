@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import "../../styles/employeeForm.css";
-import ViewData from "./EmployeeData";
-import Form from "./EmployeeForm";
-import employeeData from "../../constants/index";
+import EmployeeData from "./EmployeeData";
+import EmployeeForm from "./EmployeeForm";
 
 const Employee = () => {
   const [viewFlag, setViewFlag] = useState(false);
-
+  const employeeDetail = JSON.parse(localStorage.getItem("employeeDetail"));
   return (
     <div className="form">
-      <Form setViewFlag={setViewFlag} />
-      {employeeData === null ? null : viewFlag && <ViewData />}
+      <EmployeeForm setViewFlag={setViewFlag} />
+      {employeeDetail && viewFlag ? <EmployeeData /> : null}
     </div>
   );
 };

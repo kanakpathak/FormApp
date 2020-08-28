@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { CheckAlpha, CheckNum } from "../../../utils/index";
-import DisplayForm from "./DisplayForm";
-import "../../../styles/employeeForm.css";
-import employeeDetail from "../../../constants";
+import Form from "./Form";
 
 const initialState = {
   name: "",
@@ -17,10 +15,12 @@ const initialState = {
   dob: ""
 };
 
-const Form = ({ setViewFlag }) => {
+const EmployeeForm = ({ setViewFlag }) => {
   const [employee, setEmployee] = useState(
     JSON.parse(JSON.stringify(initialState))
   );
+
+  const employeeDetail = JSON.parse(localStorage.getItem("employeeDetail"));
 
   const checkValidity = () => {
     const { name, designation, contact } = employee;
@@ -83,6 +83,7 @@ const Form = ({ setViewFlag }) => {
   const onSubmit = () => {
     if (!checkValidity()) return;
     setViewFlag(false);
+
     const index = employeeDetail ? Object.keys(employeeDetail).length + 1 : 1;
     localStorage.setItem(
       "employeeDetail",
@@ -93,7 +94,7 @@ const Form = ({ setViewFlag }) => {
 
   return (
     <div className="form">
-      <DisplayForm
+      <Form
         empdetail={employee}
         onChangeHandler={onChangeHandler}
         addContact={addContact}
@@ -109,4 +110,4 @@ const Form = ({ setViewFlag }) => {
   );
 };
 
-export default Form;
+export default EmployeeForm;

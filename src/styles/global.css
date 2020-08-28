@@ -7,7 +7,6 @@
 
 .employeeForm {
   background-color: whitesmoke;
-  width: 80vh;
   position: relative;
   margin: 16px;
   display: flex;
@@ -28,7 +27,7 @@
 }
 
 .formLabel {
-  width: 30%;
+  width: 40%;
   padding: 5px;
   padding-left: 20px;
   padding-right: 10px;
@@ -57,7 +56,6 @@
 
 .formData {
   background-color: whitesmoke;
-  width: 80vh;
   margin: 16px;
   border: solid 1px black;
   padding: 20px;
