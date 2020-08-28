@@ -1,6 +1,7 @@
 import React from "react";
 
 const DisplayData = () => {
+  const employeeDetail = JSON.parse(localStorage.getItem("employeeDetail"));
   return (
     <div className="formData">
       {Object.keys(employeeDetail).map(empid => {
