@@ -1,5 +1,4 @@
 import React from "react";
-import employeeDetail from "../../../constants";
 
 const DisplayData = () => {
   return (
