@@ -16,6 +16,7 @@
   flex-direction: column;
   border: solid 1px black;
   padding: 20px;
+  width: 50vw;
 }
 
 .formGroup {
@@ -27,16 +28,13 @@
 }
 
 .formLabel {
-  width: 40%;
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 10px;
+  width: 25%;
 }
 
 .formInput {
-  width: 70%;
+  width: 65%;
   padding: 5px;
-  padding-left: 0px;
+  padding-left: 10px;
   display: flex;
 }
 
@@ -59,10 +57,31 @@
   margin: 16px;
   border: solid 1px black;
   padding: 20px;
+  width: 50vw;
 }
 
 .displayContact {
   display: flex;
   padding: 0px;
   line-height: 1px;
+}
+
+@media screen and (max-width: 989px) {
+  input {
+    max-width: 100px;
+  }
+
+  .employeeForm {
+    width: 80vw;
+  }
+
+  .formLabel {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  input {
+    width: 150px;
+  }
 }

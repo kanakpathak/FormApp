@@ -27,21 +27,25 @@ const DisplayData = () => {
             <div>
               <p>Designation: {employeeDetail[empid].designation}</p>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
               <p>Contact : </p>
               {employeeDetail[empid].contact.map((info, index) => {
-                return info.contactNumber !== "" ? (
-                  <p key={index} style={{ paddingLeft: "10px" }}>
-                    {info.contactType[0].toUpperCase()}
-                    {info.contactType.slice(1).toLowerCase()}-
-                    {info.contactNumber}
-                  </p>
-                ) : (
-                  ""
+                return (
+                  <div key={index}>
+                    {info.contactNumber !== "" ? (
+                      <p key={index} style={{ paddingLeft: "10px" }}>
+                        {info.contactType[0].toUpperCase()}
+                        {info.contactType.slice(1).toLowerCase()}-
+                        {info.contactNumber}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                 );
               })}
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
               <p>Skills: </p>
               {employeeDetail[empid].skills.map((skill, index) => {
                 return skill !== "" ? (

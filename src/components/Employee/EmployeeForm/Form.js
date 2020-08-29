@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = ({ contact, onChangeHandler, index }) => {
   return (
-    <div>
+    <>
       <select
         id={index}
         name="contactType"
@@ -20,21 +20,19 @@ const Contact = ({ contact, onChangeHandler, index }) => {
         value={contact.contactNumber}
         onChange={() => onChangeHandler(event)}
       />
-    </div>
+    </>
   );
 };
 
 const Skills = ({ skill, onChangeHandler, index }) => {
   return (
-    <div>
-      <input
-        type="text"
-        name="skills"
-        id={index}
-        value={skill}
-        onChange={() => onChangeHandler(event)}
-      />
-    </div>
+    <input
+      type="text"
+      name="skills"
+      id={index}
+      value={skill}
+      onChange={() => onChangeHandler(event)}
+    />
   );
 };
 
@@ -117,13 +115,15 @@ const Form = ({ empdetail, onChangeHandler, addContact, addSkill }) => {
       <div className="formGroup">
         <div className="formLabel">Date of birth:</div>
         <div className="formInput">
-          <input
-            type="date"
-            name="dob"
-            value={empdetail.dob}
-            onChange={onChangeHandler}
-            max="2004-12-31"
-          />
+          <div>
+            <input
+              type="date"
+              name="dob"
+              value={empdetail.dob}
+              onChange={onChangeHandler}
+              max="2004-12-31"
+            />
+          </div>
         </div>
       </div>
     </div>
